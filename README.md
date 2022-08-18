@@ -25,12 +25,16 @@ all object constraints reference an embedded spreadsheet `params` to avoid
 prefer constraining against datum objects instead of faces and other elements produced
 directly from sketches like pads.
 
-finally, the file contains an "assembly" group. this is simply a collection of parts
-composed together to help visualize how and whether all of them fit well together.
-this assembly group calculates all placement offsets from `asmsheet` spreadsheet.
-here's how an assembly looks like:
+finally, the [fff/provcase-assembly.FCStd](fff/provcase-assembly.FCStd) file contains
+an "assembly" group. this is simply a collection of parts composed together to help
+visualize how and whether all of them fit well together. it links to the provcase.FCStd,
+so you'll need both files. this assembly group calculates all placement offsets from
+`asmsheet` spreadsheet. here's how the assembly looks like:
 
 ![provisional fff case assembly](fff/provcase-assembly.png)
+
+the "assembly" std part has a custom property "view" with two options: exploded and
+assembled. the property is configured from the same asmsheet.
 
 ### 3D printing the parts
 
