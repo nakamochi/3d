@@ -1,24 +1,33 @@
 # nakamochi 3D designs
 
-at the moment, there's only an FFF (Fused Filament Fabrication) design suitable
-for 3D printing at home in the [fff](fff/) directory.
+the repo contains 3D models of parts used in the nakamochi project.
 
-all design sources are made in [freecad](https://freecad.org/) no older than v0.20.
-a stock installation of freecad should be sufficient but you might want to install
+those design sources which are made with [freecad](https://freecad.org/)
+use a version no older than v0.20. a stock installation of freecad should
+be sufficient but you might want to install
 [fasteners workbench](https://wiki.freecadweb.org/Fasteners_Workbench) if working on
 a design assembly.
 
-## fff
+## DIY version (FFF)
 
-the main file is in [fff/provcase.FCStd](fff/provcase.FCStd). "provcase" stands for
-"provisional case" because it is still unclear whether this will be a final design.
+fused filament fabrication design is suitable for 3D printing at home, located
+in the [fff](fff/) directory. the main file is in [fff/provcase.FCStd](fff/provcase.FCStd).
+"provcase" stands for "provisional case" because it was unclear at the time whether
+this would have been the final version.
 
 the project contains all the parts to make a full assembly with the following BOM:
 
-- [raspberry pi 4 model b](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
-- [waveshare 4.3inch DSI LCD](https://www.waveshare.com/wiki/4.3inch_DSI_LCD)
+- [raspberry pi 4 model b][rpi4]
+- [waveshare 4.3inch DSI LCD][lcd]
+- [sandisk portable 1TB SSD sdssde30-1t00][ssd]
 - [joi-it armor "block" heatsink](https://joy-it.net/en/products/RB-AlucaseP4+07)
-- [sandisk portable 1TB SSD sdssde30-1t00](https://www.westerndigital.com/en-in/products/portable-drives/sandisk-usb-3-2-ssd)
+- 90 degree angle [USB-C adapter][usbc90deg] 3.1 gen 2, 10Gbps
+- adhesive gasket/seal tape for LCD, 1mm thick, 10mm width, L370mm
+- 4 screws M2.5 L16-18mm for heatsink mount
+- 4 spacers 2-4mm thick depending on the heatsink mount screws length
+- 4 adhesive bottom pads
+- [enclosure main box](fff/box.stl), 3D-printed
+- [enclosure side cup](fff/sidecup.stl), 3D-printed
 
 all object constraints reference an embedded spreadsheet `params` to avoid 
 [topological naming problem](https://wiki.freecadweb.org/Topological_naming_problem).
@@ -31,7 +40,9 @@ visualize how and whether all of them fit well together. it links to the provcas
 so you'll need both files. this assembly group calculates all placement offsets from
 `asmsheet` spreadsheet. here's how the assembly looks like:
 
-![provisional fff case assembly](fff/provcase-assembly.png)
+   |
+---|---
+![provisional DIY case assembly](fff/provcase-assembly.png) | ![complete DIY build](fff/build.jpg)
 
 the "assembly" std part has a custom property "view" with two options: exploded and
 assembled. the property is configured from the same asmsheet.
