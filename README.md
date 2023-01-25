@@ -40,9 +40,9 @@ visualize how and whether all of them fit well together. it links to the provcas
 so you'll need both files. this assembly group calculates all placement offsets from
 `asmsheet` spreadsheet. here's how the assembly looks like:
 
-   |
----|---
-![provisional DIY case assembly](fff/provcase-assembly.png) | ![complete DIY build](fff/build.jpg)
+|    |    |
+| ---|--- |
+| ![provisional DIY case assembly](fff/provcase-assembly.png) | ![complete DIY build](fff/build.jpg) |
 
 the "assembly" std part has a custom property "view" with two options: exploded and
 assembled. the property is configured from the same asmsheet.
@@ -57,10 +57,10 @@ this version features a custom heatsink combined with the bottom plate, suitable
 for aluminium CNC milling. the construction provides a better heat dissipation
 compared to the DIY (FFF) version.
 
-   |
----|---
-![DIY+ assembly unboxed exploded](diyplus/assembly_ub_exp.png) | ![DIY+ unboxed assembled](diyplus/assembly_ub_imp.png)
-![DIY+ assembly](diyplus/assembly.png) | ![DIY+ assembly boxed](diyplus/assembly_boxed.png)
+|    |    |
+| ---|--- |
+| ![DIY+ assembly unboxed exploded](diyplus/assembly_ub_exp.png) | ![DIY+ unboxed assembled](diyplus/assembly_ub_imp.png) |
+| ![DIY+ assembly](diyplus/assembly.png)                         | ![DIY+ assembly boxed](diyplus/assembly_boxed.png) |
 
 <img alt="DIY+ temperature during IBD" src="diyplus/ir_1166.jpg" align="right">
 the baseplate serving as a heatsink brings down the main CPU temperature
