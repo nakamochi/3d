@@ -8,6 +8,10 @@ be sufficient but you might want to install
 [fasteners workbench](https://wiki.freecadweb.org/Fasteners_Workbench) if working on
 a design assembly.
 
+there are currently version kinds available, DIY (FFF) and DIY+, and possibly
+third upcoming PRO. all versions have generated files like STL, STEP and DXF,
+attached to their respective releases on https://git.qcode.ch/nakamochi/3d/releases
+
 ## DIY version (FFF)
 
 fused filament fabrication design is suitable for 3D printing at home, located
@@ -23,11 +27,11 @@ the project contains all the parts to make a full assembly with the following BO
 - [joi-it armor "block" heatsink](https://joy-it.net/en/products/RB-AlucaseP4+07)
 - 90 degree angle [USB-C adapter][usbc90deg] 3.1 gen 2, 10Gbps
 - adhesive gasket/seal tape for LCD, 1mm thick, 10mm width, L370mm
+- 4 adhesive bottom pads
 - 4 screws M2.5 L16-18mm for heatsink mount
 - 4 spacers 2-4mm thick depending on the heatsink mount screws length
-- 4 adhesive bottom pads
-- [enclosure main box](fff/box.stl), 3D-printed
-- [enclosure side cup](fff/sidecup.stl), 3D-printed
+- 3D-printed enclosure main box (look for `box.stl` in releases)
+- 3D-printed enclosure side cup (look for `sidecup.stl` in releases)
 
 all object constraints reference an embedded spreadsheet `params` to avoid 
 [topological naming problem](https://wiki.freecadweb.org/Topological_naming_problem).
@@ -97,10 +101,10 @@ other parts, harvested from the above list:
 
 **custom parts**
 
-- [baseplate](diyplus/baseplate_techdraw_c.pdf), CNC milled from aluminium
-- [enclosure box](diyplus/box.stl), 3D-printed
-- [SSD support plate](diyplus/ssdsupport.stl), 3D-printed
-- 3 [spacers](diyplus/spacer_3x2.4mm.stl) Ø3mm hole, 2.4mm thick
+- CNC milled aluminium baseplate (look for `baseplate_techdraw_c.pdf` in releases)
+- 3D-printed enclosure box (look for `box.stl` in releases)
+- 3D-printed SSD support plate (look for `ssdsupport.stl` in releases)
+- 3 Ø3mm hole 2.4mm thick spacers (use `spacer_3x2.4mm.stl` for 3D-print)
 
 > TODO: assembly instructions
 
