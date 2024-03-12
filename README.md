@@ -8,74 +8,28 @@ be sufficient but you might want to install
 [fasteners workbench](https://wiki.freecadweb.org/Fasteners_Workbench) if working on
 a design assembly.
 
-there are currently version kinds available, DIY (FFF) and DIY+, and possibly
-third upcoming PRO. all versions have generated files like STL, STEP and DXF,
-attached to their respective releases on https://git.qcode.ch/nakamochi/3d/releases
+there are currently designs only for the [NERD edition](https://nakamochi.io/#nerd).
+KAFI version is coming later on. generated files like STL, STEP and DXF are attached
+to their respective releases on https://git.qcode.ch/nakamochi/3d/releases
 
-## DIY version (FFF)
-
-fused filament fabrication design is suitable for 3D printing at home, located
-in the [fff](fff/) directory. the main file is in [fff/provcase.FCStd](fff/provcase.FCStd).
-"provcase" stands for "provisional case" because it was unclear at the time whether
-this would have been the final version.
-
-the project contains all the parts to make a full assembly with the following BOM:
-
-- [raspberry pi 4 model b][rpi4]
-- [waveshare 4.3inch DSI LCD][lcd]
-- [sandisk portable 1TB SSD sdssde30-1t00][ssd]
-- [joi-it armor "block" heatsink](https://joy-it.net/en/products/RB-AlucaseP4+07)
-- 90 degree angle [USB-C adapter][usbc90deg] 3.1 gen 2, 10Gbps
-- adhesive gasket/seal tape for LCD, 1mm thick, 10mm width, L370mm
-- 4 adhesive bottom pads
-- 4 screws M2.5 L16-18mm for heatsink mount
-- 4 spacers 2-4mm thick depending on the heatsink mount screws length
-- 3D-printed enclosure main box (look for `box.stl` in releases)
-- 3D-printed enclosure side cup (look for `sidecup.stl` in releases)
-
-all object constraints reference an embedded spreadsheet `params` to avoid 
-[topological naming problem](https://wiki.freecadweb.org/Topological_naming_problem).
-prefer constraining against datum objects instead of faces and other elements produced
-directly from sketches like pads.
-
-finally, the [fff/provcase-assembly.FCStd](fff/provcase-assembly.FCStd) file contains
-an "assembly" group. this is simply a collection of parts composed together to help
-visualize how and whether all of them fit well together. it links to the provcase.FCStd,
-so you'll need both files. this assembly group calculates all placement offsets from
-`asmsheet` spreadsheet. here's how the assembly looks like:
-
-|    |    |
-| ---|--- |
-| ![provisional DIY case assembly](fff/provcase-assembly.png) | ![complete DIY build](fff/build.jpg) |
-
-the "assembly" std part has a custom property "view" with two options: exploded and
-assembled. the property is configured from the same asmsheet.
-
-### 3D printing the parts
-
-> TODO: insert here acceptable 3D printer specs and an assembly guide
-
-## DIY+ (plus)
+## NERD edition
 
 this version features a custom heatsink combined with the bottom plate, suitable
-for aluminium CNC milling. the construction provides a better heat dissipation
-compared to the DIY (FFF) version.
+for aluminium CNC milling. the construction provides a good heat dissipation,
+making an active cooling like a fan redundant.
 
 |    |    |
 | ---|--- |
-| ![DIY+ assembly unboxed exploded](diyplus/assembly_ub_exp.png) | ![DIY+ unboxed assembled](diyplus/assembly_ub_imp.png) |
-| ![DIY+ assembly](diyplus/assembly.png)                         | ![DIY+ assembly boxed](diyplus/assembly_boxed.png) |
+| ![NERD assembly unboxed exploded](nerd/assembly_ub_exp.png) | ![NERD unboxed assembled](nerd/assembly_ub_imp.png) |
+| ![NERD assembly](nerd/assembly.png)                         | ![NERD assembly boxed](nerd/assembly_boxed.png) |
 
-<img alt="DIY+ temperature during IBD" src="diyplus/ir_1166.jpg" align="right">
+<img alt="NERD temperature during IBD" src="nerd/ir_1166.jpg" align="right">
 the baseplate serving as a heatsink brings down the main CPU temperature
 from around 70℃  to 50℃. when measured externally while doing bitcoin initial
 blocks download, an IR camera showed around 36℃.
 
-the main file [diyplus.FCStd](diyplus/diyplus.FCStd) contains all parts
-as well as the assembly. other files in the [diyplus](diyplus/) directory are
-exports from the main file, such as baseplate DXF, STL, STEP and drawings.
-
-a complete assembly BOM is as follows.
+the main file [nerd.FCStd](nerd/nerd.FCStd) contains all parts
+as well as the assembly. a complete assembly BOM is as follows.
 
 **off the shelf parts**
 
